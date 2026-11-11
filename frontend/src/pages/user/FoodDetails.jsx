@@ -1,0 +1,6 @@
+import { Link, useParams } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { foods } from "../../data/foods";
+import { useCart } from "../../context/CartContext";
+import formatCurrency from "../../utils/formatCurrency";
+export default function FoodDetails(){const {id}=useParams();const food=foods.find(f=>f.id===Number(id));const {addToCart}=useCart();if(!food)return <p>Food item not found. <Link to="/menu" className="text-emerald-700">Back to menu</Link></p>;return <div className="mx-auto grid max-w-4xl gap-8 rounded-3xl bg-white p-6 shadow-sm md:grid-cols-2"><img src={`/Images/${food.image}`} alt={food.name} className="h-80 w-full rounded-2xl bg-slate-100 object-cover"/><div className="flex flex-col justify-center"><Link to="/menu" className="mb-6 flex items-center gap-2 text-sm font-semibold text-emerald-700"><ArrowLeft size={16}/> Back to menu</Link><span className="text-sm font-bold text-emerald-700">{food.category}</span><h1 className="mt-2 text-3xl font-black">{food.name}</h1><p className="mt-4 leading-7 text-slate-500">{food.description}</p><p className="mt-5 text-2xl font-black text-emerald-700">{formatCurrency(food.price)}</p><button onClick={()=>addToCart(food)} className="mt-6 rounded-xl bg-emerald-600 px-5 py-3 font-bold text-white">Add to cart</button></div></div>}
