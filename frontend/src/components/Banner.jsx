@@ -10,7 +10,7 @@ const Banner = () => {
 
         <div className="grid min-h-[520px] grid-cols-1 items-center gap-10 py-14 md:grid-cols-2 lg:gap-16">
 
-          {/* Left Content */}
+          {/*_________________ Left Content___________________________________________________ */}
           <div className="order-2 space-y-6 text-center md:order-1 md:text-left">
 
             <span className="inline-flex items-center gap-2 rounded-full border border-green-100 bg-white px-4 py-2 text-sm font-semibold text-[#008236]">
@@ -30,7 +30,6 @@ const Banner = () => {
               favorite food, order easily, and make every campus break special
               with CanteenPro.
             </p>
-
             {/* Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2 md:justify-start">
 
@@ -44,7 +43,6 @@ const Banner = () => {
                   className="transition-transform group-hover:translate-x-1"
                 />
               </Link>
-
               <Link
                 to="/about-us"
                 className="rounded-xl border border-[#008236] bg-white px-7 py-3.5 font-bold text-[#008236] transition hover:bg-green-50"
